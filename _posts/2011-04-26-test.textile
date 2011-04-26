@@ -1,7 +1,7 @@
 ---
 layout: post
 title: test
-category: test
+category: dream
 ---
 h3. Title
 
@@ -9,8 +9,12 @@ h4. 内容
 
 字数字数
 
-<img src="/image/grow.png" />
+<img src="http://www.google.com.hk/intl/zh-CN/images/logo_cn.png" />
 
 {% highlight c %}
-code...
+int main(int argc, char* argv[])
+{
+	print("hello world!");
+	return 0;
+}
 {% endhighlight %}
