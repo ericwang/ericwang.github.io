@@ -3,8 +3,15 @@ layout: post
 title: test
 category: test
 ---
+h3. Title
 
-test
-
-内容
+h4. 内容
 字数字数
+
+<img src="image/grow.png" />
+
+{% highlight c %}
+const float a = 9.81; //gravitational force
+float b = 5; //time in seconds
+float c = (1/2)*a*(b^2) //multiply the time and gravity together to get displacement.
+{% endhighlight %}
