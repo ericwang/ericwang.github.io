@@ -128,7 +128,7 @@ div#header li {
 	margin:0 0 0 20px;
 }
 div#footer {
-	margin:50px 0 0;
+	margin:10px 0 0;
 }
 div#footer a#feed {
 	float:right;
@@ -252,7 +252,8 @@ pre {
 	-moz-border-radius:5px 5px 5px 5px;
 	-webkit-border-radius:5px;
 	border-radius:5px;
-	-moz-box-shadow:0 -1px 0 #444444;
+	-moz-box-shadow:2px 2px 5px rgba(0, 0, 0, 0.5); 
+	-webkit-box-shadow:2px 2px 5px rgba(0, 0, 0, 0.5); 
 	background-color:#222222;
 	color:#FFFFFF;
 	font-size:13px;
@@ -268,6 +269,7 @@ div.notice {
 	-webkit-border-radius:5px;
 	border-radius:5px;
 	-moz-box-shadow:0 -1px 0 #FFFDDD;
+	-webkit-box-shadow:0 -1px 0 #FFFDDD;
 	background-color:#FFFBBB;
 	margin:0 0 5px -40px;
 	padding:20px;
