@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 我就喜欢不着边际的事情
-category: dream
+category: blog
 ---
 h3. 昨天看了一篇关于暴雪总部探访的报道
 
