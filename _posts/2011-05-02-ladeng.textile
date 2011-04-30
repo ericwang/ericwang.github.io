@@ -1,0 +1,6 @@
+---
+layout: post
+title: 拉登死亡
+category: blog
+---
+记录拉登死亡
