@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 喵哈哈
-category: project
+category: dream
 ---
 
 喵哈哈
