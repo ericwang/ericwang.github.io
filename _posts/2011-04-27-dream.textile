@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 奇怪的梦
+title: 奇怪的梦-1
 category: dream
 ---
 h3. 今天做了一个脱狱的梦，很刺激，像电影。记录下来
