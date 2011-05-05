@@ -51,7 +51,18 @@ p, h2, h3, h4, h5, h6, ul {
 a {
 	color:#000000;
 	text-decoration:none;
+	
+	-moz-transition: all 0.2s ease-out;
+	-webkit-transition: all 0.2s ease-out;]
+	-o-transition: all 0.2s ease-out;
 }
+
+/*
+img {
+    opacity: 0.8;
+}
+*/
+
 a img {
 	vertical-align:middle;
 }
@@ -63,16 +74,33 @@ span#beans {
 }
 a:hover, a:hover span#eighty, a:hover span#beans {
 	color:#444444;
+	/*
+	-moz-transform-origin:0px 15px;
+	-moz-transform:matrix(1.0,0.0,0.0,-1,0px,0px);
+	-moz-transform-origin:0px 15px;
+	-webkit-transform:matrix(1.0,0.0,0.0,-1,0,0);
+	-o-transform-origin:0px 15px);
+	-o-transform:matrix(1.0,0.0,0.0,-1,0,0);
+	*/
+
+	/*opacity: 1;*/
+
+    -moz-transform: scale(1.2) rotate(2deg);
+    -webkit-transform: scale(1.2) rotate(2deg);
+	-o-transform: scale(1.2) rotate(2deg);
 }
+
 h1 a:hover {
 	color:#ddd;
 }
 div#wrapper {
 	-moz-border-radius:5px 5px 5px 5px;
 	-webkit-border-radius:5px;
+	-o-border-radius:5px;
 	border-radius:5px;
 	/*-moz-box-shadow:0 1px 0 #FFFFFF;*/
 	-webkit-box-shadow:2px 2px 5px rgba(0, 0, 0, 0.5);
+	-o-box-shadow:2px 2px 5px rgba(0, 0, 0, 0.5);
 	-moz-box-shadow:2px 2px 5px rgba(0, 0, 0, 0.5); 
 	background-color:#EEEEEE;
 	color:#222222;
@@ -97,13 +125,17 @@ div#wrapper {
 	background:#ddd;
 	-moz-border-radius:5px;
 	-webkit-border-radius:5px;
+	-o-border-radius:5px;
 }
 
 div#content img, div#content object {
 	-moz-border-radius:5px 5px 5px 5px;
 	-webkit-border-radius:5px;
+	-o-border-radius:5px;
 	border-radius:5px;
 	-moz-box-shadow:0 1px 0 #FFFFFF;
+	-webkit-box-shadow:0 1px 0 #FFFFFF;
+	-o-box-shadow:0 1px 0 #FFFFFF;
 	/*border:5px solid #222222;*/
 	/*width:680px;*/
 }
@@ -231,8 +263,10 @@ h4 {
 ul.columns {
 	-moz-column-gap:20px;
 	-webkit-column-gap:20px;
+	-o-column-gap:20px;
 	-moz-column-width:215px;
 	-webkit-column-width:215px;
+	-o-column-width:215px;
 }
 .small, p.date, p#footnote, p#footnote a, del, del a {
 	color:#888888;
@@ -253,9 +287,11 @@ code, pre {
 pre {
 	-moz-border-radius:5px 5px 5px 5px;
 	-webkit-border-radius:5px;
+	-o-border-radius:5px;
 	border-radius:5px;
 	-moz-box-shadow:2px 2px 5px rgba(0, 0, 0, 0.5); 
 	-webkit-box-shadow:2px 2px 5px rgba(0, 0, 0, 0.5); 
+	-o-box-shadow:2px 2px 5px rgba(0, 0, 0, 0.5); 
 	background-color:#222222;
 	color:#FFFFFF;
 	font-size:13px;
@@ -269,9 +305,11 @@ pre {
 div.notice {
 	-moz-border-radius:5px 5px 5px 5px;
 	-webkit-border-radius:5px;
+	-o-border-radius:5px;
 	border-radius:5px;
 	-moz-box-shadow:0 -1px 0 #FFFDDD;
 	-webkit-box-shadow:0 -1px 0 #FFFDDD;
+	-o-box-shadow:0 -1px 0 #FFFDDD;
 	background-color:#FFFBBB;
 	margin:0 0 5px -40px;
 	padding:20px;
@@ -309,8 +347,10 @@ a:hover span.balloon {
 span.balloon {
 	-moz-border-radius:5px 5px 5px 5px;
 	-webkit-border-radius:5px 5px 5px 5px;
+	-o-border-radius:5px 5px 5px 5px;
 	-moz-box-shadow:0 -1px 0 #444444;
 	-webkit-box-shadow:0 -1px 0 #444444;
+	-o-box-shadow:0 -1px 0 #444444;
 	background-color:#222222;
 	color:#FFFFFF;
 	display:none;
@@ -355,6 +395,7 @@ span.balloon {
 	background:#ddd;
 	-moz-border-radius:2px;
 	-webkit-border-radius:2px;
+	-o-border-radius:2px;
 	border:0;
 }
 
@@ -385,6 +426,7 @@ span.balloon {
     padding: 5px;
 	-moz-border-radius:5px;
 	-webkit-border-radius:5px;
+	-o-border-radius:5px;
 	border-radius:5px;
 	background:#ddd;
 }
