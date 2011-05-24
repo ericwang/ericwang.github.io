@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Concerto Gate 人物加点计算器
+title: Concerto Gate (魔力2)人物加点计算器
 category: blog
 ---
 <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="700" height="374" id="ConcertoGate">
