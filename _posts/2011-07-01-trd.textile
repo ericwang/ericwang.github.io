@@ -1,0 +1,5 @@
+---
+layout: post
+title: 宅若久时天然呆，呆到深处自然萌
+category: blog
+---
