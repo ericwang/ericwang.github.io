@@ -1,0 +1,23 @@
+---
+layout: post
+title: def dll
+category: tech
+---
+VS20XX使用DEF文件来生成DLL与Lib
+http://blog.csdn.net/xiaojianpitt/archive/2009/12/03/4934295.aspx
+
+
+VS中def文件对于生成dll和lib文件的作用
+http://blog.csdn.net/caomiao2006/archive/2009/11/06/4777532.aspx
+
+用vc创建动态连接库时，如何生成.def文件？
+http://topic.csdn.net/t/20040618/14/3103849.html
+
+DEF文件格式
+http://andylin02.javaeye.com/blog/441300
+
+
+extern "C"的用法
+http://dev.csdn.net/article/66/66384.shtm
+http://blog.chinaunix.net/u3/96097/showart.php?id=2048024
+http://blog.csdn.net/citysheep/archive/2009/02/22/3923073.aspx
