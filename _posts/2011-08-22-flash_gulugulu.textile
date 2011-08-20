@@ -1,0 +1,7 @@
+---
+layout: post
+title: 咕噜咕噜
+category: blog
+---
+
+<img src="/image/gulugulu.jpg" />

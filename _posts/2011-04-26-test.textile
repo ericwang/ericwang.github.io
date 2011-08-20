@@ -11,6 +11,9 @@ h4. 内容
 
 <img src="http://www.google.com.hk/intl/zh-CN/images/logo_cn.png" />
 
+文字文字
+wenzi
+
 {% highlight c %}
 int main(int argc, char* argv[])
 {
@@ -18,3 +21,5 @@ int main(int argc, char* argv[])
 	return 0;
 }
 {% endhighlight %}
+
+文字文字
