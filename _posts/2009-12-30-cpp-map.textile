@@ -9,13 +9,18 @@ category: c_cpp
 由于STL是一个统一的整体，map的很多用法都和STL中其它的东西结合在一起；map中由于它内部有序，由红黑树保证，因此很多函数执行的 时间复杂度都是log2N的，如果用map函数可以实现的功能，而STL Algorithm也可以完成该功能，建议用map自带函数，效率高一些……
 Map是STL的一个关联容器，它提供一对一（其中第一个可以称为关键字，每个关键字只能在map中出现一次，第二个可能称为该关键字的值）的数据处理能力，由于这个特性，它完成有可能在我们处理一对一数据的时候，在编程上提供快速通道。这里说下map内部数据的组织，map内部自建一颗红黑树(一种非严格意义上的平衡二叉树)，这颗树具有对数据自动排序的功能，所以在map内部所有的数据都是有序的，后边我们会见识到有序的好处。
 下面举例说明什么是一对一的数据映射。比如一个班级中，每个学生的学号跟他的姓名就存在着一一映射的关系，这个模型用map可能轻易描述，很明显学号用int描述，姓名用字符串描述(本篇文章中不用char *来描述字符串，而是采用STL中string来描述),下面给出map描述代码：
-Map<int, string> mapStudent;
+
+{% highlight cpp %}
+map<int, string> mapStudent;
+{% endhighlight %}
 
 1.       map的构造函数
 
 map共提供了6个构造函数，这块涉及到内存分配器这些东西，略过不表，在下面我们将接触到一些map的构造方法，这里要说下的就是，我们通常用如下方法构造一个map：
 
-Map<int, string> mapStudent;
+{% highlight cpp %}
+map<int, string> mapStudent;
+{% endhighlight %}
 
 
 2.       数据的插入
@@ -24,237 +29,148 @@ Map<int, string> mapStudent;
 
 第一种：用insert函数插入pair数据，下面举例说明(以下代码虽然是随手写的，应该可以在VC和GCC下编译通过，大家可以运行下看什么效果，在VC下请加入这条语句，屏蔽4786警告  ＃pragma warning (disable:4786) )
 
-
+{% highlight cpp %}
 #include <map>
-
 #include <string>
-
 #include <iostream>
-
-Using namespace std;
-
-Int main()
-
+using namespace std;
+int main()
 {
-
-       Map<int, string> mapStudent;
-
-       mapStudent.insert(pair<int, string>(1, “student_one”));
-
-       mapStudent.insert(pair<int, string>(2, “student_two”));
-
-       mapStudent.insert(pair<int, string>(3, “student_three”));
-
-       map<int, string>::iterator  iter;
-
-       for(iter = mapStudent.begin(); iter != mapStudent.end(); iter++)
-
-{
-
-       Cout<<iter->first<<”   ”<<iter->second<<end;
-
+	map<int, string> mapStudent;
+	mapStudent.insert(pair<int, string>(1, "student_one"));
+	mapStudent.insert(pair<int, string>(2, "student_two"));
+	mapStudent.insert(pair<int, string>(3, "student_three"));
+	map<int, string>::iterator  iter;
+	for(iter = mapStudent.begin(); iter != mapStudent.end(); iter++)
+	{
+		cout<<iter->first<<"   "<<iter->second<<end;
+	}
 }
-
-}
-
+{% endhighlight %}
 
 第二种：用insert函数插入value_type数据，下面举例说明
 
-
+{% highlight cpp %}
 #include <map>
-
 #include <string>
-
 #include <iostream>
-
-Using namespace std;
-
-Int main()
-
+using namespace std;
+int main()
 {
-
-       Map<int, string> mapStudent;
-
-       mapStudent.insert(map<int, string>::value_type (1, “student_one”));
-
-       mapStudent.insert(map<int, string>::value_type (2, “student_two”));
-
-       mapStudent.insert(map<int, string>::value_type (3, “student_three”));
-
-       map<int, string>::iterator  iter;
-
-       for(iter = mapStudent.begin(); iter != mapStudent.end(); iter++)
-
-{
-
-       Cout<<iter->first<<”   ”<<iter->second<<end;
-
+	map<int, string> mapStudent;
+	mapStudent.insert(map<int, string>::value_type (1, "student_one"));
+	mapStudent.insert(map<int, string>::value_type (2, "student_two"));
+	mapStudent.insert(map<int, string>::value_type (3, "student_three"));
+	map<int, string>::iterator  iter;
+	for(iter = mapStudent.begin(); iter != mapStudent.end(); iter++)
+	{
+	cout<<iter->first<<"   "<<iter->second<<end;
+	}
 }
-
-}
-
-
+{% endhighlight %}
 
 第三种：用数组方式插入数据，下面举例说明
 
-
+{% highlight cpp %}
 #include <map>
-
 #include <string>
-
 #include <iostream>
-
-Using namespace std;
-
-Int main()
-
+using namespace std;
+int main()
 {
-
-       Map<int, string> mapStudent;
-
-       mapStudent[1] =  “student_one”;
-
-       mapStudent[2] =  “student_two”;
-
-       mapStudent[3] =  “student_three”;
-
-       map<int, string>::iterator  iter;
-
-       for(iter = mapStudent.begin(); iter != mapStudent.end(); iter++)
-
-{
-
-       Cout<<iter->first<<”   ”<<iter->second<<end;
-
+	map<int, string> mapStudent;
+	mapStudent[1] =  "student_one";
+	mapStudent[2] =  "student_two";
+	mapStudent[3] =  "student_three";
+	map<int, string>::iterator  iter;
+	for(iter = mapStudent.begin(); iter != mapStudent.end(); iter++)
+	{
+	cout<<iter->first<<"   "<<iter->second<<end;
+	}
 }
-
-}
-
+{% endhighlight %}
 
 以上三种用法，虽然都可以实现数据的插入，但是它们是有区别的，当然了第一种和第二种在效果上是完成一样的，用insert函数插入数据，在数据的插入上涉及到集合的唯一性这个概念，即当map中有这个关键字时，insert操作是插入数据不了的，但是用数组方式就不同了，它可以覆盖以前该关键字对应的值，用程序说明
 
+{% highlight cpp %}
+mapStudent.insert(map<int, string>::value_type (1, "student_one"));
+mapStudent.insert(map<int, string>::value_type (1, "student_two"));
+{% endhighlight %}
 
-mapStudent.insert(map<int, string>::value_type (1, “student_one”));
+上面这两条语句执行后，map中1这个关键字对应的值是"student_one"，第二条语句并没有生效，那么这就涉及到我们怎么知道insert语句是否插入成功的问题了，可以用pair来获得是否插入成功，程序如下
 
-mapStudent.insert(map<int, string>::value_type (1, “student_two”));
-
-
-上面这两条语句执行后，map中1这个关键字对应的值是“student_one”，第二条语句并没有生效，那么这就涉及到我们怎么知道insert语句是否插入成功的问题了，可以用pair来获得是否插入成功，程序如下
-
-
-Pair<map<int, string>::iterator, bool> Insert_Pair;
-
-Insert_Pair = mapStudent.insert(map<int, string>::value_type (1, “student_one”));
-
+{% highlight cpp %}
+pair<map<int, string>::iterator, bool> Insert_Pair;
+insert_Pair = mapStudent.insert(map<int, string>::value_type (1, "student_one"));
+{% endhighlight %}
 
 我们通过pair的第二个变量来知道是否插入成功，它的第一个变量返回的是一个map的迭代器，如果插入成功的话Insert_Pair.second应该是true的，否则为false。
 
 下面给出完成代码，演示插入成功与否问题
 
+{% highlight cpp %}
 #include <map>
-
 #include <string>
-
 #include <iostream>
-
-Using namespace std;
-
+using namespace std;
 Int main()
-
 {
-
-       Map<int, string> mapStudent;
-
-Pair<map<int, string>::iterator, bool> Insert_Pair;
-
-       Insert_Pair ＝ mapStudent.insert(pair<int, string>(1, “student_one”));
-
-       If(Insert_Pair.second == true)
-
-       {
-
-              Cout<<”Insert Successfully”<<endl;
-
-       }
-
-       Else
-
-       {
-
-              Cout<<”Insert Failure”<<endl;
-
-       }
-
-       Insert_Pair ＝ mapStudent.insert(pair<int, string>(1, “student_two”));
-
-       If(Insert_Pair.second == true)
-
-       {
-
-              Cout<<”Insert Successfully”<<endl;
-
-       }
-
-       Else
-
-       {
-
-              Cout<<”Insert Failure”<<endl;
-
-       }
-
-       map<int, string>::iterator  iter;
-
-       for(iter = mapStudent.begin(); iter != mapStudent.end(); iter++)
-
-{
-
-       Cout<<iter->first<<”   ”<<iter->second<<end;
-
+	map<int, string> mapStudent;
+	pair<map<int, string>::iterator, bool> Insert_Pair;
+	insert_Pair ＝ mapStudent.insert(pair<int, string>(1, "student_one"));
+	if(Insert_Pair.second == true)
+	{
+		cout<<"Insert Successfully"<<endl;
+	}
+	else
+	{
+		cout<<"Insert Failure"<<endl;
+	}
+	insert_Pair ＝ mapStudent.insert(pair<int, string>(1, "student_two"));
+	if(Insert_Pair.second == true)
+	{
+		cout<<"Insert Successfully"<<endl;
+	}
+	else
+	{
+		cout<<"Insert Failure"<<endl;
+	}
+	map<int, string>::iterator  iter;
+	for(iter = mapStudent.begin(); iter != mapStudent.end(); iter++)
+	{
+		cout<<iter->first<<"   "<<iter->second<<end;
+	}
 }
-
-}
-
+{% endhighlight %}
 
 大家可以用如下程序，看下用数组插入在数据覆盖上的效果
 
+{% highlight cpp %}
 #include <map>
-
 #include <string>
-
 #include <iostream>
-
-Using namespace std;
-
-Int main()
-
+using namespace std;
+int main()
 {
-
-       Map<int, string> mapStudent;
-
-       mapStudent[1] =  “student_one”;
-
-       mapStudent[1] =  “student_two”;
-
-       mapStudent[2] =  “student_three”;
-
-       map<int, string>::iterator  iter;
-
-       for(iter = mapStudent.begin(); iter != mapStudent.end(); iter++)
-
-{
-
-       Cout<<iter->first<<”   ”<<iter->second<<end;
-
+	map<int, string> mapStudent;
+	mapStudent[1] =  "student_one";
+	mapStudent[1] =  "student_two";
+	mapStudent[2] =  "student_three";
+	map<int, string>::iterator  iter;
+	for(iter = mapStudent.begin(); iter != mapStudent.end(); iter++)
+	{
+		cout<<iter->first<<"   "<<iter->second<<end;
+	}
 }
-
-}
+{% endhighlight %}
 
 3.       map的大小
 
 在往map里面插入了数据，我们怎么知道当前已经插入了多少数据呢，可以用size函数，用法如下：
 
-Int nSize = mapStudent.size();
+{% highlight cpp %}
+int nSize = mapStudent.size();
+{% endhighlight %}
 
 4.       数据的遍历
 
@@ -264,77 +180,47 @@ Int nSize = mapStudent.size();
 
 第二种：应用反相迭代器，下面举例说明，要体会效果，请自个动手运行程序
 
+{% highlight cpp %}
 #include <map>
-
 #include <string>
-
 #include <iostream>
-
-Using namespace std;
-
-Int main()
-
+using namespace std;
+int main()
 {
-
-       Map<int, string> mapStudent;
-
-       mapStudent.insert(pair<int, string>(1, “student_one”));
-
-       mapStudent.insert(pair<int, string>(2, “student_two”));
-
-       mapStudent.insert(pair<int, string>(3, “student_three”));
-
-       map<int, string>::reverse_iterator  iter;
-
-       for(iter = mapStudent.rbegin(); iter != mapStudent.rend(); iter++)
-
-{
-
-       Cout<<iter->first<<”   ”<<iter->second<<end;
-
+	map<int, string> mapStudent;
+	mapStudent.insert(pair<int, string>(1, "student_one"));
+	mapStudent.insert(pair<int, string>(2, "student_two"));
+	mapStudent.insert(pair<int, string>(3, "student_three"));
+	map<int, string>::reverse_iterator  iter;
+	for(iter = mapStudent.rbegin(); iter != mapStudent.rend(); iter++)
+	{
+		cout<<iter->first<<"   "<<iter->second<<end;
+	}
 }
-
-}
+{% endhighlight %}
 
 第三种：用数组方式，程序说明如下
 
+{% highlight cpp %}
 #include <map>
-
 #include <string>
-
 #include <iostream>
-
-Using namespace std;
-
-Int main()
-
+using namespace std;
+int main()
 {
-
-       Map<int, string> mapStudent;
-
-       mapStudent.insert(pair<int, string>(1, “student_one”));
-
-       mapStudent.insert(pair<int, string>(2, “student_two”));
-
-       mapStudent.insert(pair<int, string>(3, “student_three”));
-
-       int nSize = mapStudent.size()
-
-//此处有误，应该是 for(int nIndex = 1; nIndex <= nSize; nIndex++)
-
-
-//by rainfish
-
-       for(int nIndex = 0; nIndex < nSize; nIndex++)
-
-{
-
-       Cout<<mapStudent[nIndex]<<end;
-
+	map<int, string> mapStudent;
+	mapStudent.insert(pair<int, string>(1, "student_one"));
+	mapStudent.insert(pair<int, string>(2, "student_two"));
+	mapStudent.insert(pair<int, string>(3, "student_three"));
+	int nSize = mapStudent.size()
+	//此处有误，应该是 for(int nIndex = 1; nIndex <= nSize; nIndex++)
+	//by rainfish
+	for(int nIndex = 0; nIndex < nSize; nIndex++)
+	{
+		cout<<mapStudent[nIndex]<<end;
+	}
 }
-
-}
-
+{% endhighlight %}
 
 5.       数据的查找（包括判定这个关键字是否在map中出现）
 
@@ -348,48 +234,29 @@ Int main()
 
 第二种：用find函数来定位数据出现位置，它返回的一个迭代器，当数据出现时，它返回数据所在位置的迭代器，如果map中没有要查找的数据，它返回的迭代器等于end函数返回的迭代器，程序说明
 
+{% highlight cpp %}
 #include <map>
-
 #include <string>
-
 #include <iostream>
-
-Using namespace std;
-
-Int main()
-
+using namespace std;
+int main()
 {
-
-       Map<int, string> mapStudent;
-
-       mapStudent.insert(pair<int, string>(1, “student_one”));
-
-       mapStudent.insert(pair<int, string>(2, “student_two”));
-
-       mapStudent.insert(pair<int, string>(3, “student_three”));
-
-       map<int, string>::iterator iter;
-
-       iter = mapStudent.find(1);
-
-if(iter != mapStudent.end())
-
-{
-
-       Cout<<”Find, the value is ”<<iter->second<<endl;
-
+	map<int, string> mapStudent;
+	mapStudent.insert(pair<int, string>(1, "student_one"));
+	mapStudent.insert(pair<int, string>(2, "student_two"));
+	mapStudent.insert(pair<int, string>(3, "student_three"));
+	map<int, string>::iterator iter;
+	iter = mapStudent.find(1);
+	if(iter != mapStudent.end())
+	{
+		cout<<"Find, the value is "<<iter->second<<endl;
+	}
+	else
+	{
+		cout<<"Do not Find"<<endl;
+	}
 }
-
-Else
-
-{
-
-       Cout<<”Do not Find”<<endl;
-
-}
-
-}
-
+{% endhighlight %}
 
 第三种：这个方法用来判定数据是否出现，是显得笨了点，但是，我打算在这里讲解
 
@@ -401,108 +268,59 @@ Upper_bound函数用法，这个函数用来返回要查找关键字的上界(�
 
 Equal_range函数返回一个pair，pair里面第一个变量是Lower_bound返回的迭代器，pair里面第二个迭代器是Upper_bound返回的迭代器，如果这两个迭代器相等的话，则说明map中不出现这个关键字，程序说明
 
+{% highlight cpp %}
 #include <map>
-
 #include <string>
-
 #include <iostream>
-
-Using namespace std;
-
-Int main()
-
+using namespace std;
+int main()
 {
-
-       Map<int, string> mapStudent;
-
-       mapStudent[1] =  “student_one”;
-
-       mapStudent[3] =  “student_three”;
-
-       mapStudent[5] =  “student_five”;
-
-       map<int, string>::iterator  iter;
-
-iter = mapStudent.lower_bound(2);
-
-{
-
-       //返回的是下界3的迭代器
-
-       Cout<<iter->second<<endl;
-
+	map<int, string> mapStudent;
+	mapStudent[1] =  "student_one";
+	mapStudent[3] =  "student_three";
+	mapStudent[5] =  "student_five";
+	map<int, string>::iterator  iter;
+	iter = mapStudent.lower_bound(2);
+	{
+		//返回的是下界3的迭代器
+		cout<<iter->second<<endl;
+	}
+	iter = mapStudent.lower_bound(3);
+	{
+		//返回的是下界3的迭代器
+		cout<<iter->second<<endl;
+	}
+	iter = mapStudent.upper_bound(2);
+	{
+		//返回的是上界3的迭代器
+		cout<<iter->second<<endl;
+	}
+	iter = mapStudent.upper_bound(3);
+	{
+		//返回的是上界5的迭代器
+		cout<<iter->second<<endl;
+	}
+	pair<map<int, string>::iterator, map<int, string>::iterator> mapPair;
+	mapPair = mapStudent.equal_range(2);
+	if(mapPair.first == mapPair.second)
+	{
+		cout<<"Do not Find"<<endl;
+	}
+	else
+	{
+		cout<<"Find"<<endl;
+	}
+	mapPair = mapStudent.equal_range(3);
+	if(mapPair.first == mapPair.second)
+	{
+		cout<<"Do not Find"<<endl;
+	}
+	else
+	{
+		Cout<<"Find"<<endl;
+	}
 }
-
-iter = mapStudent.lower_bound(3);
-
-{
-
-       //返回的是下界3的迭代器
-
-       Cout<<iter->second<<endl;
-
-}
-
-
-
-iter = mapStudent.upper_bound(2);
-
-{
-
-       //返回的是上界3的迭代器
-
-       Cout<<iter->second<<endl;
-
-}
-
-iter = mapStudent.upper_bound(3);
-
-{
-
-       //返回的是上界5的迭代器
-
-       Cout<<iter->second<<endl;
-
-}
-
-
-
-Pair<map<int, string>::iterator, map<int, string>::iterator> mapPair;
-
-mapPair = mapStudent.equal_range(2);
-
-if(mapPair.first == mapPair.second)
-       {
-
-       cout<<”Do not Find”<<endl;
-
-}
-
-Else
-
-{
-
-Cout<<”Find”<<endl;
-}
-
-mapPair = mapStudent.equal_range(3);
-
-if(mapPair.first == mapPair.second)
-       {
-
-       cout<<”Do not Find”<<endl;
-
-}
-
-Else
-
-{
-
-Cout<<”Find”<<endl;
-}
-
-}
-
+{% endhighlight %}
 
 6.       数据的清空与判空
 
@@ -512,59 +330,31 @@ Cout<<”Find”<<endl;
 
 这里要用到erase函数，它有三个重载了的函数，下面在例子中详细说明它们的用法
 
+{% highlight cpp %}
 #include <map>
-
 #include <string>
-
 #include <iostream>
-
-Using namespace std;
-
-Int main()
-
+using namespace std;
+int main()
 {
-
-       Map<int, string> mapStudent;
-
-       mapStudent.insert(pair<int, string>(1, “student_one”));
-
-       mapStudent.insert(pair<int, string>(2, “student_two”));
-
-       mapStudent.insert(pair<int, string>(3, “student_three”));
-
-
-
-//如果你要演示输出效果，请选择以下的一种，你看到的效果会比较好
-
-       //如果要删除1,用迭代器删除
-
-       map<int, string>::iterator iter;
-
-       iter = mapStudent.find(1);
-
-       mapStudent.erase(iter);
-
-
-
-       //如果要删除1，用关键字删除
-
-       Int n = mapStudent.erase(1);//如果删除了会返回1，否则返回0
-
-
-
-       //用迭代器，成片的删除
-
-       //一下代码把整个map清空
-
-       mapStudent.earse(mapStudent.begin(), mapStudent.end());
-
-       //成片删除要注意的是，也是STL的特性，删除区间是一个前闭后开的集合
-
-
-
-       //自个加上遍历代码，打印输出吧
-
+	map<int, string> mapStudent;
+	mapStudent.insert(pair<int, string>(1, "student_one"));
+	mapStudent.insert(pair<int, string>(2, "student_two"));
+	mapStudent.insert(pair<int, string>(3, "student_three"));
+	//如果你要演示输出效果，请选择以下的一种，你看到的效果会比较好
+	//如果要删除1,用迭代器删除
+	map<int, string>::iterator iter;
+	iter = mapStudent.find(1);
+	mapStudent.erase(iter);
+	//如果要删除1，用关键字删除
+	int n = mapStudent.erase(1);//如果删除了会返回1，否则返回0
+	//用迭代器，成片的删除
+	//一下代码把整个map清空
+	mapStudent.earse(mapStudent.begin(), mapStudent.end());
+	//成片删除要注意的是，也是STL的特性，删除区间是一个前闭后开的集合
+	//自个加上遍历代码，打印输出吧
 }
+{% endhighlight %}
 
 8.       其他一些函数用法
 
@@ -576,151 +366,84 @@ Int main()
 
 第一种：小于号重载，程序举例
 
+{% highlight cpp %}
 #include <map>
-
 #include <string>
-
-Using namespace std;
-
-Typedef struct tagStudentInfo
-
+using namespace std;
+typedef struct tagStudentInfo
 {
-
-       Int      nID;
-
-       String   strName;
-
+	int      nID;
+	string   strName;
 }StudentInfo, *PStudentInfo;  //学生信息
-
-
-
-Int main()
-
+int main()
 {
-
-    int nSize;
-
-       //用学生信息映射分数
-
-       map<StudentInfo, int>mapStudent;
-
-    map<StudentInfo, int>::iterator iter;
-
-       StudentInfo studentInfo;
-
-       studentInfo.nID = 1;
-
-       studentInfo.strName = “student_one”;
-
-       mapStudent.insert(pair<StudentInfo, int>(studentInfo, 90));
-
-       studentInfo.nID = 2;
-
-       studentInfo.strName = “student_two”;
-
-mapStudent.insert(pair<StudentInfo, int>(studentInfo, 80));
-
-
-
-for (iter=mapStudent.begin(); iter!=mapStudent.end(); iter++)
-
-    cout<<iter->first.nID<<endl<<iter->first.strName<<endl<<iter->second<<endl;
-
-
-
+	int nSize;
+	//用学生信息映射分数
+	map<StudentInfo, int>mapStudent;
+	map<StudentInfo, int>::iterator iter;
+	StudentInfo studentInfo;
+	studentInfo.nID = 1;
+	studentInfo.strName = "student_one";
+	mapStudent.insert(pair<StudentInfo, int>(studentInfo, 90));
+	studentInfo.nID = 2;
+	studentInfo.strName = "student_two";
+	mapStudent.insert(pair<StudentInfo, int>(studentInfo, 80));
+	for (iter=mapStudent.begin(); iter!=mapStudent.end(); iter++)
+	cout<<iter->first.nID<<endl<<iter->first.strName<<endl<<iter->second<<endl;
 }
+{% endhighlight %}
 
 以上程序是无法编译通过的，只要重载小于号，就OK了，如下：
 
-Typedef struct tagStudentInfo
-
+{% highlight cpp %}
+typedef struct tagStudentInfo
 {
-
-       Int      nID;
-
-       String   strName;
-
-       Bool operator < (tagStudentInfo const& _A) const
-
-       {
-
-              //这个函数指定排序策略，按nID排序，如果nID相等的话，按strName排序
-
-              If(nID < _A.nID)  return true;
-
-              If(nID == _A.nID) return strName.compare(_A.strName) < 0;
-
-              Return false;
-
-       }
-
+	int      nID;
+	string   strName;
+	bool operator < (tagStudentInfo const& _A) const
+	{
+		//这个函数指定排序策略，按nID排序，如果nID相等的话，按strName排序
+		if(nID < _A.nID)  return true;
+		if(nID == _A.nID) return strName.compare(_A.strName) < 0;
+		return false;
+	}
 }StudentInfo, *PStudentInfo;  //学生信息
+{% endhighlight %}
 
 第二种：仿函数的应用，这个时候结构体中没有直接的小于号重载，程序说明
 
+{% highlight cpp %}
 #include <map>
-
 #include <string>
-
-Using namespace std;
-
-Typedef struct tagStudentInfo
-
+using namespace std;
+typedef struct tagStudentInfo
 {
-
-       Int      nID;
-
-       String   strName;
-
+	int      nID;
+	string   strName;
 }StudentInfo, *PStudentInfo;  //学生信息
-
-
-
-Classs sort
-
+classs sort
 {
-
-       Public:
-
-       Bool operator() (StudentInfo const &_A, StudentInfo const &_B) const
-
-       {
-
-              If(_A.nID < _B.nID) return true;
-
-              If(_A.nID == _B.nID) return _A.strName.compare(_B.strName) < 0;
-
-              Return false;
-
-       }
-
+	public:
+	bool operator() (StudentInfo const &_A, StudentInfo const &_B) const
+	{
+		If(_A.nID < _B.nID) return true;
+		If(_A.nID == _B.nID) return _A.strName.compare(_B.strName) < 0;
+		Return false;
+	}
 };
-
-
-
-Int main()
-
+int main()
 {
-
-       //用学生信息映射分数
-
-       Map<StudentInfo, int, sort>mapStudent;
-
-       StudentInfo studentInfo;
-
-       studentInfo.nID = 1;
-
-       studentInfo.strName = “student_one”;
-
-       mapStudent.insert(pair<StudentInfo, int>(studentInfo, 90));
-
-       studentInfo.nID = 2;
-
-       studentInfo.strName = “student_two”;
-
-mapStudent.insert(pair<StudentInfo, int>(studentInfo, 80));
-
+	//用学生信息映射分数
+	map<StudentInfo, int, sort>mapStudent;
+	StudentInfo studentInfo;
+	studentInfo.nID = 1;
+	studentInfo.strName = "student_one";
+	mapStudent.insert(pair<StudentInfo, int>(studentInfo, 90));
+	studentInfo.nID = 2;
+	studentInfo.strName = "student_two";
+	mapStudent.insert(pair<StudentInfo, int>(studentInfo, 80));
 }
+{% endhighlight %}
 
 10.   另外
 
