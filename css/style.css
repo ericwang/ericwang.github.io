@@ -448,6 +448,6 @@ span.balloon {
 }
 
 /*disqus*/
-div#dsq-comments li{
+#content #dsq-comments li{
 	list-style-type:none;
 }
