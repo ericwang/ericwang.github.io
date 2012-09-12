@@ -446,3 +446,8 @@ span.balloon {
 #content .cnt p {
 	margin: 20px 0;
 }
+
+/*disqus*/
+#dsq-content li{
+	list-style-type:none;
+}
