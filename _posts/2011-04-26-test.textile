@@ -1,0 +1,27 @@
+---
+layout: post
+title: test
+description: ""
+category: other
+tags: [示例,test]
+---
+h3. Title
+
+h4. 内容
+
+字数字数
+
+<img src="http://www.google.com.hk/intl/zh-CN/images/logo_cn.png" />
+
+文字文字
+wenzi
+
+{% highlight c %}
+int main(int argc, char* argv[])
+{
+	print("hello world!");
+	return 0;
+}
+{% endhighlight %}
+
+文字文字

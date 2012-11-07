@@ -1,0 +1,172 @@
+---
+layout: post
+title: C++的营养RAII
+description: ""
+category: program
+tags: [c++,RAII]
+---
+
+莫华枫 
+    动物都会摄取食物，吸收其中的营养，用于自身生长和活动。然而，并非食物中所有的物质都能为动物所吸收。那些无法消化的物质，通过消化道的另一头（某些动物消化道只有一头）排出体外。不过，一种动物无法消化的排泄物，是另一种动物（生物）的食物，后者可以从中摄取所需的营养。 
+    一门编程语言，对于程序员而言，如同食物那样，包含着所需的养分。当然也包含着无法消化的东西。不同的是，随着程序员不断成长，会逐步消化过去无法消化的那些东西。 
+    C++可以看作一种成分复杂的食物，对于多数程序员而言，是无法完全消化的。正因为如此，很多程序员认为C++太难以消化，不应该去吃它。但是，C++的营养不可谓不丰富，就此舍弃，而不加利用，则是莫大的罪过。好在食物可以通过加工，变得易于吸收，比如说发酵。鉴于程序员们的消化能力的差异，也为了让C ++的营养能够造福他人，我就暂且扮演一回酵母菌，把C++的某些营养单独提取出来，并加以分解，让那些消化能力不太强的程序员也能享受它的美味。:) 
+    （为了让这些营养便于消化，我将会用C#做一些案例。选择C#的原因很简单，因为我熟悉。:)） 
+RAII 
+    RAII，好古怪的营养啊！它的全称应该是“Resource Acquire Is Initial”。这是C++创始人Bjarne Stroustrup发明的词汇，比较令人费解。说起来，RAII的含义倒也不算复杂。用白话说就是：在类的构造函数中分配资源，在析构函数中释放资源。这样，当一个对象创建的时候，构造函数会自动地被调用；而当这个对象被释放的时候，析构函数也会被自动调用。于是乎，一个对象的生命期结束后将会不再占用资源，资源的使用是安全可靠的。 
+    下面便是在C++中实现RAII的典型代码： 
+
+{% highlight cpp %}
+class file 
+{ 
+public: 
+	file(string const& name) { 
+		  m_fileHandle=open_file(name.cstr()); 
+	} 
+	~file() { 
+		  close_file(m_fileHandle); 
+	} 
+	... 
+private: 
+	handle m_fileHandle; 
+}
+{% endhighlight %}
+
+    很典型的“在构造函数里获取，在析构函数里释放”。如果我写下代码： 
+
+{% highlight cpp %}
+void fun1() ...{ 
+	file myfile("my.txt"); 
+	... //操作文件 
+}    //此处销毁对象，调用析构函数，释放资源
+{% endhighlight %}
+
+    当函数结束时，局部对象myfile的生命周期也结束了，析构函数便会被调用，资源会得到释放。而且，如果函数中的代码抛出异常，那么析构函数也会被调用，资源同样会得到释放。所以，在RAII下，不仅仅资源安全，也是异常安全的。 
+    但是，在如下的代码中，资源不是安全的，尽管我们实现了RAII： 
+
+{% highlight cpp %}
+void fun2() ...{ 
+	file pfile=new file("my.txt"); 
+		... //操作文件 
+}
+{% endhighlight %}
+
+    因为我们在堆上创建了一个对象（通过new），但是却没有释放它。我们必须运用delete操作符显式地加以释放： 
+
+{% highlight cpp %}
+void fun3() ...{ 
+	file pfile=new file("my.txt"); 
+		... //操作文件 
+		delete pfile; 
+}
+{% endhighlight %}
+
+    否则，非但对象中的资源得不到释放，连对象本身的内存也得不到回收。（将来，C++的标准中将会引入GC（垃圾收集），但正如下面分析的那样，GC依然无法确保资源的安全）。 
+    现在，在fun3()，资源是安全的，但却不是异常安全的。因为一旦函数中抛出异常，那么delete pfile;这句代码将没有机会被执行。C++领域的诸位大牛们告诫我们：如果想要在没有GC的情况下确保资源安全和异常安全，那么请使用智能指针： 
+
+{% highlight cpp %}
+void fun4() ...{ 
+	  shared_ptr <file> spfile(new file("my.txt")); 
+	  ... //操作文件 
+}  //此处，spfile结束生命周期的时候，会释放（delete）对象
+{% endhighlight %}
+
+    那么，智能指针又是怎么做到的呢？下面的代码告诉你其中的把戏（关于智能指针的更进一步的内容，请参考std::auto_ptr，boost或tr1的智能指针）：
+
+{% highlight cpp %}
+template <typename T> 
+class smart_ptr 
+...{ 
+public: 
+	smart_ptr(T* p):m_ptr(p) ...{} 
+	~smart_ptr() ...{ delete m_ptr; } 
+	... 
+private: 
+	T* m_ptr; 
+}
+{% endhighlight %}
+
+    没错，还是RAII。也就是说，智能指针通过RAII来确保内存资源的安全，也间接地使得对象上的RAII得到实施。不过，这里的RAII并不是十分严格：对象（所占的内存也是资源）的创建（资源获取）是在构造函数之外进行的。广义上，我们也把它划归RAII范畴。但是，Matthew Wilson在《Imperfect C++》一书中，将其独立出来，称其为RRID（Resource Release Is Destruction）。RRID的实施需要在类的开发者和使用者之间建立契约，采用相同的方法获取和释放资源。比如，如果在shared_ptr构造时使用malloc()，便会出现问题，因为shared_ptr是通过delete释放对象的。 
+    对于内置了GC的语言，资源管理相对简单。不过，事情并非总是这样。下面的C#代码摘自MSDN Library的C#编程指南，我略微改造了一下： 
+
+{% highlight cpp %}
+static void CodeWithoutCleanup() 
+...{ 
+	System.IO.FileStream file = null; 
+	System.IO.FileInfo fileInfo = new System.IO.FileInfo("C:\file.txt"); 
+	file = fileInfo.OpenWrite(); 
+	file.WriteByte(0xF); 
+}
+{% endhighlight %}
+
+    那么资源会不会泄漏呢？这取决于对象的实现。如果通过OpenWrite()获得的FileStream对象，在析构函数中执行了文件的释放操作，那么资源最终不会泄露。因为GC最终在执行GC操作的时候，会调用Finalize()函数（C#类的析构函数会隐式地转换成Finalize()函数的重载）。这是由于C#使用了引用语义（严格地讲，是对引用类型使用引用语义），一个对象实际上不是对象本身，而是对象的引用。如同C++中的那样，引用在离开作用域时，是不会释放对象的。否则，便无法将一个对象直接传递到函数之外。在这种情况下，如果没有显式地调用Close()之类的操作，资源将不会得到立刻释放。但是像文件、锁、数据库链接之类属于重要或稀缺的资源，如果等到GC执行回收，会造成资源不足。更有甚者，会造成代码执行上的问题。我曾经遇到过这样一件事：我执行了一个sql操作，获得一个结果集，然后执行下一个sql，结果无法执行。这是因为我使用的SQL Server 2000不允许在一个数据连接上同时打开两个结果集（很多数据库引擎都是这样）。第一个结果集用完后没有立刻释放，而GC操作则尚未启动，于是便造成在一个未关闭结果集的数据连接上无法执行新的sql的问题。 
+    所以，只要涉及了内存以外的资源，应当尽快释放。（当然，如果内存能够尽快释放，就更好了）。对于上述CodeWithoutCleanup()函数，应当在最后调用file对象上的Close()函数，以便释放文件： 
+
+{% highlight cpp %}
+static void CodeWithoutCleanup() 
+...{ 
+	System.IO.FileStream file = null; 
+	System.IO.FileInfo fileInfo = new System.IO.FileInfo("C:\file.txt"); 
+	file = fileInfo.OpenWrite(); 
+	file.WriteByte(0xF); 
+	file.Close(); 
+}
+{% endhighlight %}
+
+    现在，这个函数是严格资源安全的，但却不是严格异常安全的。如果在文件的操作中抛出异常，Close()成员将得不到调用。此时，文件也将无法及时关闭，直到GC完成。为此，需要对异常作出处理： 
+
+{% highlight cpp %}
+static void CodeWithCleanup() 
+{
+	System.IO.FileStream file = null; 
+	System.IO.FileInfo fileInfo = null; 
+	try 
+	{ 
+		fileInfo = new System.IO.FileInfo("C:\file.txt"); 
+		file = fileInfo.OpenWrite(); 
+		file.WriteByte(0xF); 
+	} 
+	catch(System.Exception e) 
+	{ 
+		System.Console.WriteLine(e.Message); 
+	} 
+	finally 
+	{ 
+		if (file != null) 
+		{
+			file.Close(); 
+		}
+	} 
+}
+{% endhighlight %}
+
+    try-catch-finally是处理这种情况的标准语句。但是，相比前面的C++代码fun1()和fun4()繁琐很多。这都是没有RAII的后果啊。下面，我们就来看看，如何在C#整出RAII来。 
+    一个有效的RAII应当包含两个部分：构造/析构函数的资源获取/释放和确定性的析构函数调用。前者在C#中不成问题，C#有构造函数和析构函数。不过， C#的构造函数和析构函数是不能用于RAII的，原因一会儿会看到。正确的做法是让一个类实现IDisposable接口，在IDisposable:: Dispose()函数中释放资源： 
+
+{% highlight cpp %}
+class RAIIFile : IDisposable 
+{ 
+	public RAIIFile(string fn) { 
+		System.IO.FileInfo fileInfo = new System.IO.FileInfo(fn); 
+		file = fileInfo.OpenWrite(); 
+	} 
+
+	public void Dispose() { 
+	  file.Close(); 
+	} 
+	private System.IO.FileStream file = null; 
+}
+{% endhighlight %}
+
+    下一步，需要确保文件在退出作用域，或发生异常时被确定性地释放。这项工作需要通过C#的using语句实现： 
+
+{% highlight cpp %}
+static void CodeWithRAII() 
+{ 
+	using(RAIIFile file=new RAIIFile("C:\file.txt")) 
+	{ 
+		 //操作文件 
+	} //文件释放 
+}
+{% endhighlight %}
+
+原文: http://topic.csdn.net/u/20080216/08/afb1d694-803b-4248-9b0f-893225023491.html

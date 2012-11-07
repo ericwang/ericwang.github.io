@@ -1,0 +1,8 @@
+---
+layout: post
+title: 消息
+description: ""
+category: other
+tags: [news,卡塔尔,拉登,击毙]
+---
+卡塔尔半岛电视台日前播放了一段据信是本拉登的录音, 在录音中, 本拉登亲口证实：他已在巴基斯坦被美军击毙。
