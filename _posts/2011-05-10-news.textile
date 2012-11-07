@@ -3,7 +3,7 @@ layout: post
 title: 最近的一些事
 description: ""
 category: game
-tags: [game]
+tags: [game, vod, pic, ]
 ---
 h3. [PSN]索尼平井一夫：PSN网络将在5月完全恢复
 

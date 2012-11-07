@@ -3,7 +3,7 @@ layout: post
 title: 用GDB调试程序[转]
 description: ""
 category: program
-tags: [GDB, debug]
+tags: [c, c++, GDB, debug]
 ---
 
 GDB概述

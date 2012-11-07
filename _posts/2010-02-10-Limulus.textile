@@ -1,9 +1,9 @@
 ---
 layout: post
 title: 鲎(hou)
-description: ""
+description: "鲎,蓝色血液"
 category: other
-tags: [鲎, 神奇, 动物, hou, pic]
+tags: [鲎, 神奇, 动物, hou, pic, 蓝色, 血液]
 ---
 
 <img src="http://imgsrc.baidu.com/baike/abpic/item/42e89c265ca746278a82a1a9.jpg" />

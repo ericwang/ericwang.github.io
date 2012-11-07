@@ -3,7 +3,7 @@ layout: post
 title: def dll
 description: ""
 category: program
-tags: [c++, dylib]
+tags: [c++, dylib, vs, DEF, extern "C"]
 ---
 VS20XX使用DEF文件来生成DLL与Lib
 http://blog.csdn.net/xiaojianpitt/archive/2009/12/03/4934295.aspx

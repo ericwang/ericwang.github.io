@@ -3,7 +3,7 @@ layout: post
 title: c++文件读写总结
 description: ""
 category: program
-tags: [c++, file, io]
+tags: [c++, file, io, fstream]
 ---
 
 一、ASCII 输出

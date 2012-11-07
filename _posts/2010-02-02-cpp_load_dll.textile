@@ -3,16 +3,16 @@ layout: post
 title: 动态加载DLL的方法与注意的问题
 description: ""
 category: program
-tags: [c++, dylib]
+tags: [c++, dylib, 动态, 加载, __declspec, dllexport]
 ---
 
 加载DLL的方法主要有两种：一种是隐式链接，另外一种是动态加载。
-隐式链接会把DLL中所有标志为_declspec(dllexport)的函数都加载，如果有多个DLL加载时，可能会影响到程序执行的效率。而用动态加载DLL的方式则可以根据需要去加载用到的函数。
+隐式链接会把DLL中所有标志为__declspec(dllexport)的函数都加载，如果有多个DLL加载时，可能会影响到程序执行的效率。而用动态加载DLL的方式则可以根据需要去加载用到的函数。
 动态加载DLL的方法：
 1.把生成的.DLL文件复制到测试工程DLLTest目录下。这里假设该.DLL文件为add.dll，主要代码是：
 
 {% highlight cpp %}
-_declspec(dllexport) int add(int x, int y)
+__declspec(dllexport) int add(int x, int y)
 {
     return x + y;
 }
