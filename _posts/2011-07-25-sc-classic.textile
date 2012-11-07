@@ -3,7 +3,7 @@ layout: post
 title: 星际经典回顾
 description: ""
 category: game
-tags: [game,StarCraft,PLU,BoxeR,人族,皇帝,Reach,神族,英雄,Anytime,死神,iloveoov,怪兽,Nal_ra,梦想,Xellos,完美,Savior,本座,马,Flash,教主,最终兵器,Kespa,OSL,MSL,Jaedong]
+tags: [game, StarCraft, PLU, BoxeR, 人族, 皇帝, Reach, 神族, 英雄, Anytime, 死神, iloveoov, 怪兽, Nal_ra, 梦想, Xellos, 完美, Savior, 本座, 马, Flash, 教主, 最终兵器, Kespa, OSL, MSL, Jaedong, pic, vod]
 ---
 
 来自plu.cn和网上寻找的资料，有介绍和视频。

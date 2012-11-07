@@ -3,7 +3,7 @@ layout: post
 title: C++的营养RAII
 description: ""
 category: program
-tags: [c++,RAII]
+tags: [c++, RAII]
 ---
 
 莫华枫 

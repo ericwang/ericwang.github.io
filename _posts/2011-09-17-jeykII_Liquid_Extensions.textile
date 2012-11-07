@@ -3,7 +3,7 @@ layout: post
 title: Liquid Extensions
 description: ""
 category: IT
-tags: [jekyll,liquid,extensions]
+tags: [jekyll, liquid, extensions]
 ---
 
 介绍jeykll的Highlight code, include other files, and transform text with Liquid Extensions.

@@ -3,7 +3,7 @@ layout: post
 title: ostringstream函数的使用
 description: "当存在未知数据大小的时候,可以使用 ostringstream 来代替 sprintf , 避免总是申请大量的缓冲区.用法可以参照下面转载的文章."
 category: program
-tags: [c++,sstream]
+tags: [c++, sstream]
 ---
 
 当存在未知数据大小的时候,可以使用 ostringstream 来代替 sprintf , 避免总是申请大量的缓冲区.用法可以参照下面转载的文章.

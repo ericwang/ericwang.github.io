@@ -3,7 +3,7 @@ layout: post
 title: 信吗？笑吧《暗黑破坏神3》中国随全球同步发售
 description: ""
 category: game
-tags: [game,D3,全球,发售]
+tags: [game, D3, 全球, 发售]
 ---
 作者：血脸杀手       来源：凯恩之角
 http://news.plu.cn/othernews/20110523/28916.html

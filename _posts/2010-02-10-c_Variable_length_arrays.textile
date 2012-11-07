@@ -3,7 +3,7 @@ layout: post
 title: C中的Variable length arrays (变长数组)
 description: ""
 category: program
-tags: [c,array]
+tags: [c, array]
 ---
 
 Variable length arrays 是C99的特性，而不是 C++98 的，关于c99标准的变长数组, 在标准的6.7.5.2 Array declarators里面有这样的说明:  

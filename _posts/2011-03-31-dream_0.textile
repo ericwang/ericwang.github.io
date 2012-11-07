@@ -3,7 +3,7 @@ layout: post
 title: 奇怪的梦-0
 description: ""
 category: other
-tags: [神奇,dream]
+tags: [神奇, dream]
 ---
 	昨晚做了一个梦，梦见我去一个奇怪的书店，好多漫画书，我拿了一本漫画书，名字很长，具体忘了。是关于花的题目。很长很拗口，但是挺有意思。我才拿了这本书。
 

@@ -3,7 +3,7 @@ layout: post
 title: RTTI、虚函数和虚基类的开销分析及使用指导
 description: ""
 category: program
-tags: [c++,RTTI,虚函数,面向对象,抽象类,接口,性能]
+tags: [c++, RTTI, 虚函数, 面向对象, 抽象类, 接口, 性能]
 ---
 
 转自：http://baiy.cn/doc/cpp/inside_rtti.htm

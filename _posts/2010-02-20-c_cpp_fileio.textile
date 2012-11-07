@@ -3,7 +3,7 @@ layout: post
 title: C/C++ 文件读写操作总结
 description: ""
 category: program
-tags: [c++,file,io]
+tags: [c++, file, io]
 ---
 
 在编程的过程中，文件的操作是一个经常用到的问题，在C++Builder中，可以使用多种方法对文件操作，下面我就按以下几个部分对此作详细介绍，就是：

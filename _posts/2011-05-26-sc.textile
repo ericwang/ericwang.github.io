@@ -3,7 +3,7 @@ layout: post
 title: 最近的星际
 description: "2011年6月2日 ABC MART MSL4强 第二日"
 category: game
-tags: [game,StarCraft,Blizzard,Hydra,Flash,教主,最终兵器,ABC,MART,MSL,2011,6月,2日]
+tags: [game, StarCraft, Blizzard, Hydra, Flash, 教主, 最终兵器, ABC, MART, MSL, 2011, 6月, 2日]
 ---
 GIGABYTE StarsWar6 Killer全球总决赛将于2011年6月11-12日在上海正大广场正式上演
 最终三名国手WE.Lovecd、WE.LoveTT、Nv.xiaOt和韩国最强神族oGs.MC晋级线下

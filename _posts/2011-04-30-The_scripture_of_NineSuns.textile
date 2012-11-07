@@ -3,7 +3,7 @@ layout: post
 title: The scripture of NineSuns
 description: ""
 category: other
-tags: [nine,sun,scripture]
+tags: [nine, sun, scripture]
 ---
 悉心体认,随人所动,随曲就伸,不丢不顶. 
 一静无有不静,静须静如山岳.他强由他强, 清风拂山冈.

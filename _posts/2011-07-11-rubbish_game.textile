@@ -3,7 +3,7 @@ layout: post
 title: 垃圾游戏特征及其诞生原因推测
 description: ""
 category: game
-tags: [game,rubbish,nico]
+tags: [game, rubbish, nico]
 ---
 
 来源：nico百科(网址真的忘了,别人给我翻译的)

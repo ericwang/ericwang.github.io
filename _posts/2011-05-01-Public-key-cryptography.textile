@@ -3,7 +3,7 @@ layout: post
 title: Public-key cryptography
 description: ""
 category: IT
-tags: [pulic,key,cryptographyt]
+tags: [pulic, key, cryptographyt]
 ---
 下午和鱼琢磨了半天非对称加密及其作用。
 总结了半天，我画了一张图，免得以后忘了。如果有不对的地方，帮忙指正。

@@ -3,7 +3,7 @@ layout: post
 title: WeMadeFOX全队解散：星际被托管 魔兽成历史
 description: ""
 category: game
-tags: [game,StarCraft,WeMadeFox,news,Nada,Moon,Lyn,Roro,TY]
+tags: [game, StarCraft, WeMadeFOX, news, Nada, Moon, Lyn, Roro, TY]
 ---
 
 文章所属:星际争霸2资讯        作者：佚名       来源：网易

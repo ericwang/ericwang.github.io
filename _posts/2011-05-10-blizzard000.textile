@@ -3,7 +3,7 @@ layout: post
 title: 动视暴雪Q1财务表现强劲
 description: ""
 category: game
-tags: [game,Blizzard,Q1]
+tags: [game, Blizzard, Q1]
 ---
 来源：网易
 
