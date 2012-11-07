@@ -1,7 +1,9 @@
 ---
 layout: post
 title: test
-category: dream
+description: ""
+category: other
+tags: [示例,test]
 ---
 h3. Title
 

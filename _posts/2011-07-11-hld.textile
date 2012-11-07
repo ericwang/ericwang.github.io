@@ -1,5 +1,7 @@
 ---
 layout: post
 title: 神经病人思维广，弱智儿童欢乐多
-category: blog
+description: ""
+category: other
+tags: [other]
 ---

@@ -1,7 +1,9 @@
 ---
 layout: post
 title: 3个服务端(游戏)
-category: tech
+description: ""
+category: IT
+tags: [game,server]
 ---
 
 Electrotank Universe Platform

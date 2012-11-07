@@ -1,66 +1,9 @@
-<!DOCTYPE HTML>
-<html>
-	<head>
-		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
-		<title>{{ page.title }} - 水草</title>
-		<link rel="stylesheet" type="text/css" href="/css/style.css" />
-		<link rel="stylesheet" type="text/css" href="/css/syntax.css" />
-		<link rel="alternate" type="application/rss+xml" title="RSS" href="http://ericwang.github.com/atom.xml">
-		<script type="text/javascript">
-		  var _gaq = _gaq || [];
-		  _gaq.push(['_setAccount', 'UA-22990784-1']);
-		  _gaq.push(['_trackPageview']);
-
-		  (function() {
-			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-		  })();
-		</script>
-		<!--
-		<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
-		-->
-	</head>
-
-	<body>
-		<div id="logo"><h1><a href="/">水草</a></h1></div>
-		<div id="wrapper">
-			<div id="content">
-				<!--
-				<sapan style="float:right;margin-top:13px;margin-left:5px;margin-right:-15px;"><g:plusone size="small" data-count="false"></g:plusone></sapan>
-				<a title="Post to Google Buzz" class="google-buzz-button" style="float:right;margin-top:15px;margin-left:5px" href="http://www.google.com/buzz/post" data-button-style="small-button"></a>
-				<script type="text/javascript" src="http://www.google.com/buzz/api/button.js"></script>
-				-->
-				<a target="_blank" style="float:right;margin-top:15px;margin-left:5px" href="javascript:void(0);"><span class="balloon">retweet</span><img src="/image/tweet.png" /></a>
-				<h2>{{ page.title }}</h2>
-				<div class="cnt">
-					{{ content }}
-					<br />
-					--EOF--
-				</div>
-				<div id="disqus_thread"></div>
-				<script type="text/javascript">
-				  /**
-				    * var disqus_identifier; [Optional but recommended: Define a unique identifier (e.g. post id or slug) for this thread] 
-				    */
-				  (function() {
-				   var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-				   dsq.src = 'http://ericwang.disqus.com/embed.js';
-				   (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-				  })();
-				</script>
-				<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-			</div>
-			<p style="border-top:1px solid #bbb; margin:10px -5px"></p>
-			<div id="footer">
-				<a id="feed" href="http://ericwang.github.com/atom.xml"><img src="/image/feed.png"></a></a>
-				<span style="color:#bbb;font-size:12px">(◕‿‿◕)要相信你的CPU</span>
-				<p style="clear:both"></p>
-			</div>
-		</div>
-		<!--
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-		-->
-	</body>
-</html>
-
+---
+#layout: default
+layout: post
+theme :
+  #name : twitter
+  name : eric
+---
+{% include JB/setup %}
+{% include themes/eric/post.html %}

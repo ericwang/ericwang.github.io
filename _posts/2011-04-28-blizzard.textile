@@ -1,7 +1,9 @@
 ---
 layout: post
 title: 我就喜欢不着边际的事情
-category: blog
+description: ""
+category: other
+tags: [Blizzard,Mike Morhaime]
 ---
 h3. 昨天看了一篇关于暴雪总部探访的报道
 

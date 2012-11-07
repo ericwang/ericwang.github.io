@@ -1,7 +1,9 @@
 ---
 layout: post
 title: Windows 平台上长路径名文件的解决方法
-category: c_cpp
+description: ""
+category: program
+tags: [c++,windows]
 ---
 
 强 晟 (qiangsh@cn.ibm.com), 软件工程师, IBM

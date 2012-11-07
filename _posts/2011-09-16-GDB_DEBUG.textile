@@ -1,7 +1,9 @@
 ---
 layout: post
 title: GDB调试精粹及使用实例  
-category: c_cpp
+description: ""
+category: program
+tags: [GDB,debug]
 ---
 
 http://mikev.blog.163.com/blog/static/39911080200781564718746/

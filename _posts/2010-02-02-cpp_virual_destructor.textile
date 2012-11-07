@@ -1,7 +1,9 @@
 ---
 layout: post
 title: C++中虚析构函数的作用 
-category: c_cpp
+description: ""
+category: program
+tags: [c++,虚函数,析构函数,面向对象]
 ---
 
 	我们知道，用C++开发的时候，用来做基类的类的析构函数一般都是虚函数。可是，为什么要这样做呢？下面用一个小例子来说明：    

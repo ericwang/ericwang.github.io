@@ -1,7 +1,9 @@
 ---
 layout: post
 title: 鲎(hou)
-category: dream
+description: ""
+category: other
+tags: [鲎,神奇,动物]
 ---
 
 <img src="http://imgsrc.baidu.com/baike/abpic/item/42e89c265ca746278a82a1a9.jpg" />

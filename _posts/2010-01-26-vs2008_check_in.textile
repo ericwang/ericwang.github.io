@@ -1,7 +1,9 @@
 ---
 layout: post
 title: vs2008哪些工程文件可以删除
-category: tech
+description: ""
+category: program
+tags: [vs]
 ---
 当签入文件，Visual c + + 将自动提示您签入项目工作区窗格加上项目生成文件 (.mak) 中的所有文件。 在大多数的情况下这些只是将需要打开并重新生成 Visual c + + 项目的源文件。
 

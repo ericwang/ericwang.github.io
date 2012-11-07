@@ -1,7 +1,9 @@
 ---
 layout: post
 title: 好吧，从新开始。
-category: dream
+description: ""
+category: other
+tags: [cpu,blog,noya]
 ---
 h3. //(◕‿‿◕)要相信你的cpu
 

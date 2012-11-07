@@ -1,7 +1,9 @@
 ---
 layout: post
 title: ABC MART MSL4强 第二日
-category: blog
+description: ""
+category: game
+tags: [game,StarCraft,ABC,MART,MSL,Hydra,Flash,教主,最终兵器]
 ---
 Hydra(Z) 0:3 Flash(T)
 

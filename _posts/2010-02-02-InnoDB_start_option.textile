@@ -1,7 +1,9 @@
 ---
 layout: post
 title: InnoDB 启动选项
-category: tech
+description: ""
+category: IT
+tags: [mysql,innodb,性能]
 ---
 
 2 InnoDB 启动选项

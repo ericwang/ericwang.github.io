@@ -1,7 +1,9 @@
 ---
 layout: post
 title: C++的营养RAII
-category: c_cpp
+description: ""
+category: program
+tags: [c++,RAII]
 ---
 
 莫华枫 

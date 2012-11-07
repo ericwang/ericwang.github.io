@@ -1,7 +1,9 @@
 ---
 layout: post
 title: 东方动画《幻想万华镜》新动画+OP+ED
-category: blog
+description: ""
+category: game
+tags: [game,动漫,同人,东方]
 ---
 h3. 东方系列一直是我喜欢的游戏
 

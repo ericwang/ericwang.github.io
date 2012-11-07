@@ -1,7 +1,9 @@
 ---
 layout: post
 title: FlashPlayer不弹出错误信息的问题
-category: FlashAS3
+description: ""
+category: program
+tags: [FLASH,AS3,debug]
 ---
 
 首先，要安装debug版的flahsplayer

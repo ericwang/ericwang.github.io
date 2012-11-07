@@ -1,7 +1,9 @@
 ---
 layout: post
 title: c/c++支持可变参数的函数
-category: c_cpp
+description: ""
+category: program
+tags: [c++,function,arg]
 ---
 
 c/c++支持可变参数的函数
@@ -47,7 +49,7 @@ typedef char * va_list; //字符串指针
 1、用ANSI标准形式时，参数个数可变的函数的原型声明是：
 
 {% highlight cpp %}
-type funcname(type para1， type para2， ……);
+type funcname(type para1, type para2, ...);
 {% endhighlight %}
 
 关于这个定义，有三点需要说明：
@@ -55,20 +57,20 @@ type funcname(type para1， type para2， ……);
 例如：
 
 {% highlight cpp %}
-int MyPrintf(char const* fmt， ……);
+int MyPrintf(char const* fmt, ...);
 {% endhighlight %}
 
 但是，我们也可以这样定义函数：
 
 {% highlight cpp %}
-void MyFunc(……);
+void MyFunc(...);
 {% endhighlight %}
 
 但是，这样的话，我们就无法使用函数的参数了，因为无法通过上面所讲的宏来提取每个参数。所以除非你的函数代码中的确没有用到参数表中的任何参数，否则必须在参数表中使用至少一个普通参数。
 注意，可变参数只能位于函数参数表的最后。不能这样：
 
 {% highlight cpp %}
-void MyFunc(……， int i);
+void MyFunc(..., int i);
 {% endhighlight %}
 
 2、采用与UNIX 兼容系统下的声明方式时，参数个数可变的函数原型是：

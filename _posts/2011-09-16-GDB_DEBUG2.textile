@@ -1,7 +1,9 @@
 ---
 layout: post
 title: 用GDB调试程序[转]
-category: c_cpp
+description: ""
+category: program
+tags: [GDB,debug]
 ---
 
 GDB概述

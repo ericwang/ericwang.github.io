@@ -1,7 +1,9 @@
 ---
 layout: post
 title: STL中map用法详解
-category: c_cpp
+description: ""
+category: program
+tags: [c++,STL]
 ---
 
 作者：不详　来源：互联网 

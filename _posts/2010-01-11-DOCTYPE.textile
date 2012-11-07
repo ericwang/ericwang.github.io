@@ -1,7 +1,9 @@
 ---
 layout: post
 title: DOCTYPE 切換運作的方式
-category: tech
+description: ""
+category: IT
+tags: [XHTML,DOCTYPE,W3C]
 ---
 
 若有完整 URI 的 XHTML DOCTYPE，則切到標準模式，用 W3C 規則來讀網頁裡的 CSS 與 XHTML。

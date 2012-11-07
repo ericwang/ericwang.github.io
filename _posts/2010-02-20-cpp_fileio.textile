@@ -1,7 +1,9 @@
 ---
 layout: post
 title: c++文件读写总结
-category: c_cpp
+description: ""
+category: program
+tags: [c++,file,io]
 ---
 
 一、ASCII 输出

@@ -1,7 +1,9 @@
 ---
 layout: post
 title: 动态加载DLL的方法与注意的问题
-category: c_cpp
+description: ""
+category: program
+tags: [c++,dylib]
 ---
 
 加载DLL的方法主要有两种：一种是隐式链接，另外一种是动态加载。

@@ -1,7 +1,9 @@
 ---
 layout: post
 title: 最近的一些事
-category: blog
+description: ""
+category: game
+tags: [game]
 ---
 h3. [PSN]索尼平井一夫：PSN网络将在5月完全恢复
 

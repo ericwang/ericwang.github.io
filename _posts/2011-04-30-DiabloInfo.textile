@@ -1,7 +1,9 @@
 ---
 layout: post
 title: 《暗黑破坏神3》即将出在PS3或XBOX
-category: blog
+description: ""
+category: game
+tags: [game,D3,PS3,XBOX,Blizzard]
 ---
 h3. 暴雪又要玩家用机了？
 

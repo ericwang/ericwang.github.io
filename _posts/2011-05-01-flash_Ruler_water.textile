@@ -1,7 +1,9 @@
 ---
 layout: post
 title: Flash 三神器
-category: blog
+description: ""
+category: game
+tags: [game,StarCraft,Flash,神器,教主,最终兵器,OSL,本座,Jaedong,PLU]
 ---
 三大神器：量天尺、圣水宝矿力水特（Pocari Sweat）、三重封神印。
 

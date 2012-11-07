@@ -1,7 +1,9 @@
 ---
 layout: post
 title: C/C++ 字符串处理函数
-category: c_cpp
+description: ""
+category: program
+tags: [c++,string]
 ---
 
 2008年01月15日 星期二 21:06

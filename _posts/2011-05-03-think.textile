@@ -1,7 +1,9 @@
 ---
 layout: post
 title: 思考的问题
-category: blog
+description: ""
+category: other
+tags: [直觉,逻辑,理性,感性,智商]
 ---
 往往人类使用直觉代替逻辑思考，直接给出问题的答案。
 越理性的人越容易用逻辑思考代替直觉。

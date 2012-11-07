@@ -1,7 +1,9 @@
 ---
 layout: post
 title: inline函数链接报错：LNK2019
-category: tech
+description: ""
+category: program
+tags: [c++,inline,LNK2019]
 ---
 
 症状：inline函数链接报错LNK2019,去掉inline后就没有错误了。
