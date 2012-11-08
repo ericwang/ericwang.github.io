@@ -4,7 +4,7 @@ title: "博客主题做成了主题包，可以直接pull下来"
 description: ""
 category: IT
 analytics: true
-tags: [IT, aquatic, theme, jekyll]
+tags: [IT, aquatic, theme, jekyll, github]
 ---
 
 1:在github上添加了个[jekyll 的主题 aquatic](https://github.com/ericwang/aquatic)
@@ -30,4 +30,5 @@ theme :
 {% endhighlight %}
 
 删除很简单，只要删除`yourblog/_includes/themes`里面的`aquatic`目录，和`yourblog/assets/themes`里的`aquatic`目录即可。
+
 
