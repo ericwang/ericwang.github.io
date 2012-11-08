@@ -3,6 +3,7 @@ layout: post
 title: C++的营养RAII
 description: ""
 category: program
+analytics: true
 tags: [c++, RAII, 内存, 资源, 释放]
 ---
 

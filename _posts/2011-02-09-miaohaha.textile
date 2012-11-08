@@ -3,6 +3,7 @@ layout: post
 title: 喵哈哈
 description: ""
 category: other
+analytics: true
 tags: [first]
 ---
 

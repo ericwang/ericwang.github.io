@@ -3,6 +3,7 @@ layout: post
 title: 拉登死亡
 description: ""
 category: other
+analytics: true
 tags: [news, history, 2011, 五月, 2日]
 ---
 记录拉登死亡

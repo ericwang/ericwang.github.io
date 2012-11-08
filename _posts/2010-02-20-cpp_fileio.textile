@@ -3,6 +3,7 @@ layout: post
 title: c++文件读写总结
 description: ""
 category: program
+analytics: true
 tags: [c++, file, io, fstream]
 ---
 

@@ -3,6 +3,7 @@ layout: post
 title: test
 description: ""
 category: other
+analytics: true
 tags: [示例, test]
 ---
 h3. Title

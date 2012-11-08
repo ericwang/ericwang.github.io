@@ -3,6 +3,7 @@ layout: post
 title: 暗黑3全新符文之石系统及炫丽技能效果展示
 description: ""
 category: game
+analytics: true
 tags: [game, D3, Blizzard, 符文, vod]
 ---
 作者：草莓        来源：凯恩之角 

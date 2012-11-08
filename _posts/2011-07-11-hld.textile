@@ -3,5 +3,6 @@ layout: post
 title: 神经病人思维广，弱智儿童欢乐多
 description: ""
 category: other
+analytics: true
 tags: [other]
 ---

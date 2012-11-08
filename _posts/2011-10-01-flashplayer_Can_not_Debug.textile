@@ -3,6 +3,7 @@ layout: post
 title: FlashPlayer不弹出错误信息的问题
 description: ""
 category: program
+analytics: true
 tags: [FLASH, AS3, debug]
 ---
 

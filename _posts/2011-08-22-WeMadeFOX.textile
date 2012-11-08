@@ -3,6 +3,7 @@ layout: post
 title: WeMadeFOX全队解散：星际被托管 魔兽成历史
 description: ""
 category: game
+analytics: true
 tags: [game, StarCraft, WeMadeFOX, news, Nada, Moon, Lyn, Roro, TY]
 ---
 

@@ -3,6 +3,7 @@ layout: post
 title: DOCTYPE 切換運作的方式
 description: ""
 category: IT
+analytics: true
 tags: [XHTML, DOCTYPE, W3C]
 ---
 

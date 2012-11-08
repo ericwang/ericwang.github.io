@@ -3,6 +3,7 @@ layout: post
 title: 垃圾游戏特征及其诞生原因推测
 description: ""
 category: game
+analytics: true
 tags: [game, rubbish, nico]
 ---
 

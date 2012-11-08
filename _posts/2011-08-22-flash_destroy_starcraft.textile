@@ -3,6 +3,7 @@ layout: post
 title: 趣谈教主毁灭星际 GOMTV WCG直到今日FOX
 description: ""
 category: game
+analytics: true
 tags: [game, StarCraft, Flash, 教主, 毁灭, GOMTV, WCG, WeMadeFOX, news, SPL, MSL, vod, pic]
 ---
 

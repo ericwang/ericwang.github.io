@@ -3,6 +3,7 @@ layout: post
 title: Liquid Extensions
 description: ""
 category: IT
+analytics: true
 tags: [jekyll, liquid, extensions]
 ---
 

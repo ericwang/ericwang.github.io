@@ -3,6 +3,7 @@ layout: post
 title: 人工神经网络
 description: ""
 category: IT
+analytics: true
 tags: [ANN, 神经元, 算法, 模拟]
 ---
 开篇

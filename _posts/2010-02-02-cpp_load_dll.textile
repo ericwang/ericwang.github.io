@@ -3,6 +3,7 @@ layout: post
 title: 动态加载DLL的方法与注意的问题
 description: ""
 category: program
+analytics: true
 tags: [c++, dylib, 动态, 加载, __declspec, dllexport]
 ---
 

@@ -3,6 +3,7 @@ layout: post
 title: 鲎(hou)
 description: "鲎,蓝色血液"
 category: other
+analytics: true
 tags: [鲎, 神奇, 动物, hou, pic, 蓝色, 血液]
 ---
 

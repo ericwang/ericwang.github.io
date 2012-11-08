@@ -3,6 +3,7 @@ layout: post
 title: 好吧，从新开始。
 description: ""
 category: other
+analytics: true
 tags: [cpu, blog, noya, 2011, 四月, 27日]
 ---
 h3. //(◕‿‿◕)要相信你的cpu

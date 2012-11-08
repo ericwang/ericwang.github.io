@@ -3,6 +3,7 @@ layout: post
 title: C/C++ 字符串处理函数
 description: ""
 category: program
+analytics: true
 tags: [c, c++, string, 函数]
 ---
 

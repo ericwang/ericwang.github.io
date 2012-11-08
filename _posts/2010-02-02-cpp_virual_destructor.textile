@@ -3,6 +3,7 @@ layout: post
 title: C++中虚析构函数的作用 
 description: ""
 category: program
+analytics: true
 tags: [c++, 虚函数, 析构函数, 面向对象]
 ---
 

@@ -3,6 +3,7 @@ layout: post
 title: 用GDB调试程序[转]
 description: ""
 category: program
+analytics: true
 tags: [c, c++, GDB, debug]
 ---
 
@@ -996,4 +997,3 @@ GDB支持下列语言：C, C++, Fortran, PASCAL, Java, Chill, assembly, 和 Modu
     我个人非常喜欢GDB的自动调试的功能，这个功能真的很强大，试想，我在UNIX下写个脚本，让脚本自动编译我的程序，被自动调试，并把结果报告出来，调试成功，自动checkin源码库。一个命令，编译带着调试带着checkin，多爽啊。只是GDB对自动化调试目前支持还不是很成熟，只能实现半自动化，真心期望着GDB的自动化调试功能的成熟。
     
     如果各位对GDB或是别的技术问题有兴趣的话，欢迎和我讨论交流。本人目前主要在UNIX下做产品软件的开发，所以，对UNIX下的软件开发比较熟悉，当然，不单单是技术，对软件工程实施，软件设计，系统分析，
-目管理我也略有心得。欢迎大家找我交流，（QQ是：753640，MSN是：haoel[@]hotmail.com）

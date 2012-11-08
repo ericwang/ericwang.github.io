@@ -3,6 +3,7 @@ layout: post
 title: mysql的innodb_flush_log_at_trx_commit
 description: "抱怨Innodb比MyISAM慢 100倍？那么你大概是忘了调整这个值。"
 category: IT
+analytics: true
 tags: [mysql, 性能]
 ---
 

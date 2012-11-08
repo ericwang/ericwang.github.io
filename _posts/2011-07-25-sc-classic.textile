@@ -3,6 +3,7 @@ layout: post
 title: 星际经典回顾
 description: ""
 category: game
+analytics: true
 tags: [game, StarCraft, PLU, BoxeR, 人族, 皇帝, Reach, 神族, 英雄, Anytime, 死神, iloveoov, 怪兽, Nal_ra, 梦想, Xellos, 完美, Savior, 本座, 马, Flash, 教主, 最终兵器, Kespa, OSL, MSL, Jaedong, pic, vod]
 ---
 
@@ -315,4 +316,3 @@ vs Terran:
 
 　　不是只有乐坛才有Leessang。星际争霸界也有李双。那就是像《无限挑战》里的“蜜罐”吉所在的hip-hop组合Leessang一样有名的星际争霸李氏双雄:教主Flash和暴君Jaedong。fans们取两个人的姓“李氏”称他们作“李双”，并且他们两分别是现在星际争霸人族和虫族的领军人物，实力都非常的强大，于是他们之间的巅峰对决就被称为“李双录”。同时也延续了TvZ经典的“林臻录”。
 　　那么李双究竟是多么优秀的选手呢？Jaedong拿过3次OSL冠军，2次MSL冠军。在SPL中不仅是新人王，还是08-09赛季的多胜王；Flash也不落下风甚至更甚一筹：SPL FINAL MVP称号，连续3个赛季的SPL多胜王称号（08-09赛季他与Jaedong并称多胜王），并获得OSL3次冠军，3次MSL冠军。Jaedong2009年突破100胜，有着BO5之王的称号；Flash则是最年轻的OSL冠军获得者，最年轻的SPL100胜达成者，有着金鼠标获得者最年少纪录等多项纪录，这些纪录在很长一段时间内都难有人能打破。
-

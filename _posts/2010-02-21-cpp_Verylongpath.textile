@@ -3,6 +3,7 @@ layout: post
 title: Windows 平台上长路径名文件的解决方法
 description: ""
 category: program
+analytics: true
 tags: [c++, windows, 平台, 长, 路径]
 ---
 

@@ -3,6 +3,7 @@ layout: post
 title: C/C++ 文件读写操作总结
 description: ""
 category: program
+analytics: true
 tags: [c++, file, io]
 ---
 

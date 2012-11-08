@@ -3,6 +3,7 @@ layout: post
 title: c/c++支持可变参数的函数
 description: ""
 category: program
+analytics: true
 tags: [c++, function, arg, 函数]
 ---
 

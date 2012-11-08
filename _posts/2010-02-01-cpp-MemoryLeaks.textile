@@ -3,6 +3,7 @@ layout: post
 title: C++内存泄漏检测拾遗
 description: ""
 category: program
+analytics: true
 tags: [c++, memory, leak, 内存, 泄露, vs]
 ---
 

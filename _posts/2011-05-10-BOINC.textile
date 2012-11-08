@@ -3,6 +3,7 @@ layout: post
 title: 搜寻地外文明
 description: ""
 category: other
+analytics: true
 tags: [boinc, 外星人, 文明, SETI, 寻找, pic]
 ---
 

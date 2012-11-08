@@ -3,6 +3,7 @@ layout: post
 title: 使用typeid和RTTI C++获取对象运行时类名称【转】
 description: ""
 category: program
+analytics: true
 tags: [c++, typeid, RTTI, 运行时, 对象, 名称]
 ---
 

@@ -3,6 +3,7 @@ layout: post
 title: GDB调试精粹及使用实例  
 description: ""
 category: program
+analytics: true
 tags: [c, c++, GDB, debug]
 ---
 

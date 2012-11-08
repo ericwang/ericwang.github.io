@@ -3,6 +3,7 @@ layout: post
 title: inline函数链接报错：LNK2019
 description: ""
 category: program
+analytics: true
 tags: [c++, inline, LNK2019]
 ---
 

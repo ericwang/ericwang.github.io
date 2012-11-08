@@ -3,6 +3,7 @@ layout: post
 title: 我就喜欢不着边际的事情
 description: ""
 category: other
+analytics: true
 tags: [Blizzard, Mike Morhaime, 2011, 四月, 28日]
 ---
 h3. 昨天看了一篇关于暴雪总部探访的报道

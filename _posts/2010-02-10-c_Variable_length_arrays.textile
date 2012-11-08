@@ -3,6 +3,7 @@ layout: post
 title: C中的Variable length arrays (变长数组)
 description: ""
 category: program
+analytics: true
 tags: [c, array, c99, c++98]
 ---
 
