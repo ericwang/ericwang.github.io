@@ -2,6 +2,7 @@
 layout: page
 title: (◕‿‿◕)要相信你的CPU!
 tagline:
+analytics: true
 ---
 {% include JB/setup %}
 <ul class="posts">
