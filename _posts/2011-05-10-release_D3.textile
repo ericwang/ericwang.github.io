@@ -4,7 +4,7 @@ title: 最近的一些事
 description: ""
 category: gam
 analytics: true
-tags: [game, vod, pic, ]
+tags: [game, vod, pic, vod, news, 魂斗罗, 索尼, 手冢治虫, 仙剑, 大宇, softstar, 加密, PSN, 索尼, 平井一夫, 五月]
 ---
 h3. [PSN]索尼平井一夫：PSN网络将在5月完全恢复
 
