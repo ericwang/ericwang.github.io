@@ -1,11 +1,5 @@
 <div id="content">
-	<!--
-	<sapan style="float:right;margin-top:13px;margin-left:5px;margin-right:-15px;"><g:plusone size="small" data-count="false"></g:plusone></sapan>
-	<a title="Post to Google Buzz" class="google-buzz-button" style="float:right;margin-top:15px;margin-left:5px" href="http://www.google.com/buzz/post" data-button-style="small-button"></a>
-	<script type="text/javascript" src="http://www.google.com/buzz/api/button.js"></script>
-	-->
-	<a target="_blank" style="float:right;margin-top:15px;margin-left:5px" href="javascript:void(0);"><span class="balloon">retweet</span><img src="{{ ASSET_PATH }}/img/feed.png" /></a>
-	<h1>{{ page.title }}</h2>
+	<h1>{{ page.title }}</h1>
 	<div class="cnt">
 		{{ content }}
 		<br />
@@ -18,8 +12,7 @@
 		{% unless page.tags == empty %}
 		<h4>Tags</h4>
 		<ul class="tag_box inline">
-			{% assign tags_list = page.tags %}
-			{% include JB/tags_list %}
+			{% assign tags_list = page.tags %}{% include JB/tags_list %}
 		</ul>
 		{% endunless %}  
 	</div>
