@@ -30,5 +30,3 @@ theme :
 {% endhighlight %}
 
 删除很简单，只要删除`yourblog/_includes/themes`里面的`aquatic`目录，和`yourblog/assets/themes`里的`aquatic`目录即可。
-
-
