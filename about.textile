@@ -1,0 +1,11 @@
+---
+layout: page
+title: About
+header: Posts By Category
+group: navigation
+---
+# nickname: "ericwang", nickname_cn: "水草", name: "王昊"
+# email: ericwang79#gmail.com
+# follw: <a href="//plus.google.com/107406230388194565159?prsrc=3" rel="publisher" style="text-decoration:none;" alt="Google+" title="Google+"><img src="//ssl.gstatic.com/images/icons/gplus-16.png" alt="Google+" style="border:0;width:16px;height:16px;"/></a>
+# project: "null":http://ericwang.github.com/null/ !https://secure.travis-ci.org/ericwang/null.png?branch=master!:https://travis-ci.org/ericwang/null
+# project: "Aquatic":http://ericwang.github.com/aquatic/ is a fully responsive theme for Jekyll + Jekyll-Bootstrap.
