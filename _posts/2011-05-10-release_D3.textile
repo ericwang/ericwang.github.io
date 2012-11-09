@@ -2,7 +2,7 @@
 layout: post
 title: 最近的一些事
 description: ""
-category: gam
+category: game
 analytics: true
 tags: [game, vod, pic, vod, news, 魂斗罗, 索尼, 手冢治虫, 仙剑, 大宇, softstar, 加密, PSN, 索尼, 平井一夫, 五月]
 ---
