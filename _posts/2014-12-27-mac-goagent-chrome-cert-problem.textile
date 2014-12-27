@@ -2,11 +2,11 @@
 layout: post
 title: mac osx 使用goagent，在chrome下访问google，不是私密连接的问题
 description: ""
-category: other
+category: IT
 analytics: true
 tags: [mac, goagent, 2014, 十二月, 27日]
 ---
-h3. mac osx 使用goagent，在chrome下访问google，出现不是私密连接的问题
+h3. 解决办法
 
 确认已经安装好goagent
 
