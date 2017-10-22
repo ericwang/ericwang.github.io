@@ -4,13 +4,13 @@ permalink: /:categories/:year/:month/:day/:title
 
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
 #auto: true
-highlighter: true
+highlighter: pygments
 
 # Themes are encouraged to use these universal variables 
 # so be sure to set them if your theme uses them.
 #
 title : 水草
-tagline: Site Tagline
+tagline: eric wang 水草
 author :
   name : Eric Wang
   email : ericwang79@gmail.com
@@ -29,10 +29,12 @@ author :
 #production_url : http://ericwang.github.com
 production_url : https://ericwang.github.io
 
+plugins: ["jekyll-sitemap","jekyll-textile-converter"]
+
 # All Jekyll-Bootstrap specific configurations are namespaced into this hash
 #
 JB :
-  version : 0.2.13
+  version : 0.3.0
 
   # All links will be namespaced by BASE_PATH if defined.
   # Links in your website should always be prefixed with {{BASE_PATH}}
@@ -57,7 +59,7 @@ JB :
   #   - When setting BASE_PATH it must be a valid url.
   #     This means always setting the protocol (http|https) or prefixing with "/"
   BASE_PATH : false
-  THEME-NAME : aquatic
+
   # By default, the asset_path is automatically defined relative to BASE_PATH plus the enabled theme.
   # ex: [BASE_PATH]/assets/themes/[THEME-NAME]
   #
@@ -74,6 +76,8 @@ JB :
   archive_path: /archive.html
   categories_path : /categories.html
   tags_path : /tags.html
+  atom_path : /atom.xml
+  rss_path : /rss.xml
 
   # Settings for comments helper
   # Set 'provider' to the comment provider you want to use.
